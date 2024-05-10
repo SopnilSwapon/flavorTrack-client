@@ -1,17 +1,20 @@
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-    const {logOut, user} = useAuth();
+    const { logOut, user } = useAuth();
     const handleLogOut = () => {
         logOut()
-        .then(()=>{
-            console.log('successfully logOut');
-            alert('logOut successful')
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "successfully logOut",
+                });
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
     const links = <div className="flex gap-4 font-bold">
         <Link to='/'><li>Home</li></Link>
@@ -38,12 +41,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    {
+                        user && <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                            </div>
                         </div>
-                    </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    }
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-400 rounded-box w-52">
                         <li>
                             <a className="justify-between">
                                 My added food items
@@ -54,7 +59,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {
-                    user? <button onClick={handleLogOut}>LogOut</button> : <Link to='/signin'><button>Login</button></Link>
+                    user ? <button onClick={handleLogOut}>LogOut</button> : <Link to='/signin'><button>Login</button></Link>
                 }
             </div>
         </div>

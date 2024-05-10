@@ -6,8 +6,9 @@ import app from "../../firebase/firebase.config";
 export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
 const [user, setUser] = useState(null);
-const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider()
+const auth = getAuth(app);
+
 // _____________Create User____________________//
  const createUser = (email,password) => {
     return createUserWithEmailAndPassword(auth, email, password)
@@ -18,7 +19,8 @@ const login = (email, password) => {
 }
 // _________________Google Login___________________//
 const googleLogin = () => {
-    return signInWithPopup(auth, googleProvider)
+    console.log('inside google');
+    return  signInWithPopup(auth, googleProvider)
 }
 
 // ____________________LogOut__________________________//

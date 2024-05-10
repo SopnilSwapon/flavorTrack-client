@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import loginPic from '../../assets/login.jpg'
 import useAuth from '../../Hooks/useAuth';
 import { FcGoogle } from "react-icons/fc";
+import Swal from 'sweetalert2'
 const Login = () => {
     const {login, googleLogin} = useAuth();
     const handleLogin = e => {
@@ -13,23 +14,32 @@ const Login = () => {
         login(email, password)
         .then(res => {
             console.log(res.user);
-            alert('login successful')
+            Swal.fire({
+              icon: "success",
+              title: "Login Successful",
+            });
         })
         .catch(error => {
-            console.error(error.message)
+            console.error(error.message);
+            Swal.fire({
+              icon: "error",
+              title: "You have wrong email & password",
+            });
         })
 
     }
-    // const handleGoogleLogin = () => {
-    //      googleLogin()
-    //      .then(res => {
-    //         console.log(res.user);
-    //         alert('login by google successful')
-    //      })
-    //      .catch(error => {
-    //         console.error(error.message)
-    //      })
-    // }
+    const handleGoogleLogin = () => {
+     console.log(googleLogin);
+     googleLogin()
+     .then(result => {
+      console.log(result.user);
+      console.log('success');
+     })
+     .catch(error => {
+      console.error(error);
+     })
+    }
+   
     return (
         <div className="hero mb-20 bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
@@ -57,9 +67,10 @@ const Login = () => {
               </div>
               <div>
                 <p className='text-center'>Social Login</p>
-                <p className='text-3xl flex mt-2 justify-center'><FcGoogle onClick={handleGoogleLogin}></FcGoogle></p>
+             
               </div>
             </form>
+            <p className='text-3xl flex mt-2 justify-center'><FcGoogle onClick={handleGoogleLogin}></FcGoogle></p>
             <p className='text-center border'>New to this <Link className='font-bold text-orange-600' to='/signup'>Sign Up</Link></p>
           </div>
         </div>
