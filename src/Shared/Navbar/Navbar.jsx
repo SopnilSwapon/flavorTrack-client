@@ -1,10 +1,22 @@
-import { NavLink } from "react-router-dom";
+import {Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
+    const {logOut, user} = useAuth();
+    const handleLogOut = () => {
+        logOut()
+        .then(()=>{
+            console.log('successfully logOut');
+            alert('logOut successful')
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
     const links = <div className="flex gap-4 font-bold">
-        <NavLink to='/'><li>Home</li></NavLink>
-        <NavLink><li>All Foods</li></NavLink>
-        <NavLink><li>Gallery</li></NavLink>
+        <Link to='/'><li>Home</li></Link>
+        <Link><li>All Foods</li></Link>
+        <Link><li>Gallery</li></Link>
     </div>
     return (
         <div className="navbar bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 rounded text-white">
@@ -41,7 +53,9 @@ const Navbar = () => {
                         <li><a>My ordered food items</a></li>
                     </ul>
                 </div>
-                <a className="btn">Login</a>
+                {
+                    user? <button onClick={handleLogOut}>LogOut</button> : <Link to='/signin'><button>Login</button></Link>
+                }
             </div>
         </div>
     );
