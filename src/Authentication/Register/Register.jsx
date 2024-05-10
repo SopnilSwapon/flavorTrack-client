@@ -39,7 +39,7 @@ const Register = () => {
 
     }
     return (
-        <div className="hero mb-20 bg-base-200">
+        <div className="hero pt-24 mb-20 bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center mr-12 w-1/2 lg:text-left">
             <img src={regPic} alt="" />
@@ -70,9 +70,7 @@ const Register = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input type="password" placeholder="password" name='password' className="input input-bordered" required />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                </label>
+               
               </div>
               <div className="form-control mt-6">
                <input className="btn bg-gradient-to-r from-indigo-400 from-10% via-sky-600 via-30% to-emerald-500 to-90% text-white" type="submit" value="Sign Up" />

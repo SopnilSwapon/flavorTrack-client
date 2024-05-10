@@ -10,7 +10,6 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(email, password);
         login(email, password)
         .then(res => {
             console.log(res.user);
@@ -41,7 +40,7 @@ const Login = () => {
     }
    
     return (
-        <div className="hero mb-20 bg-base-200">
+        <div className="hero pt-20 mb-20 bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             <img src={loginPic} alt="" />
@@ -63,7 +62,7 @@ const Login = () => {
                 
               </div>
               <div className="form-control mt-6">
-              <input className="btn bg-[#ff3811] text-white" type="submit" value="Login" />
+              <input className="btn bg-gradient-to-r from-indigo-400 from-10% via-sky-600 via-30% to-emerald-500 to-90% text-white" type="submit" value="Login" />
               </div>
               <div>
                 <p className='text-center'>Social Login</p>

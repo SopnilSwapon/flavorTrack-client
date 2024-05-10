@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../../Pages/banner.css'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 const Banner = () => {
 
     const progressCircle = useRef(null);
@@ -20,7 +21,7 @@ const Banner = () => {
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
     return (
-        <div>
+        <div className='pt-20'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -43,7 +44,7 @@ const Banner = () => {
                             <div className="">
                                 <h1 className="mt-52 text-purple-500 md:w-4/6 lg:w-1/2 mx-auto text-5xl font-bold">Veggie Delight Burger</h1>
                                 <p className="mb-5 text-white font-bold">The Veggie Delight Burger is n0t just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
-                                <button className="btn btn-primary">All Foods</button>
+                                <Link to='/allfoods'><button className="btn btn-primary">All Foods</button></Link>
                             </div>
                         </div>
                     </div>
@@ -56,7 +57,7 @@ const Banner = () => {
                             <div className="">
                                 <h1 className="mt-52 text-pink-500 md:w-4/6 lg:w-1/2 mx-auto bg-gray-400 text-5xl font-bold">Veggie Delight Burger</h1>
                                 <p className="mb-5 text-white font-bold">The Veggie Delight Burger is n0t just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
-                                <button className="btn btn-primary">All Foods</button>
+                                <Link to='/allfoods'><button className="btn btn-primary">All Foods</button></Link>
                             </div>
                         </div>
                     </div>
@@ -69,7 +70,7 @@ const Banner = () => {
                             <div className="">
                                 <h1 className="mt-52 text-pink-500 md:w-4/6 lg:w-1/2 mx-auto text-5xl font-bold">Veggie Delight Burger</h1>
                                 <p className="mb-5 text-white font-bold">The Veggie Delight Burger is n0t just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
-                                <button className="btn btn-primary">All Foods</button>
+                                <Link to='/allfoods'><button className="btn btn-primary">All Foods</button></Link>
                             </div>
                         </div>
                     </div>
@@ -82,7 +83,7 @@ const Banner = () => {
                             <div className="">
                                 <h1 className="mt-52 text-pink-500 md:w-4/6 lg:w-1/2 mx-auto bg-gray-400 text-5xl font-bold">Veggie Delight Burger</h1>
                                 <p className="mb-5 text-white font-bold">The Veggie Delight Burger is n0t just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
-                                <button className="btn btn-primary">All Foods</button>
+                                <Link to='/allfoods'><button className="btn btn-primary">All Foods</button></Link>
                             </div>
                         </div>
                     </div>

@@ -18,11 +18,11 @@ const Navbar = () => {
     }
     const links = <div className="flex gap-4 font-bold">
         <Link to='/'><li>Home</li></Link>
-        <Link><li>All Foods</li></Link>
+        <Link to='/allfoods'><li>All Foods</li></Link>
         <Link><li>Gallery</li></Link>
     </div>
     return (
-        <div className="navbar bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 rounded text-white">
+        <div className="navbar fixed z-10 bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 rounded text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,14 +48,10 @@ const Navbar = () => {
                             </div>
                         </div>
                     }
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-400 rounded-box w-52">
-                        <li>
-                            <a className="justify-between">
-                                My added food items
-                            </a>
-                        </li>
-                        <li><a>Add a food item</a></li>
-                        <li><a>My ordered food items</a></li>
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4  shadow bg-gray-400 rounded-box w-52">
+                        <Link to='/addfooditem'><li>My added food items</li></Link>
+                        <Link className="py-2" to='/addfooditem'><li>Add a food item</li></Link>
+                        <Link to='/addfooditem'><li>My ordered food items</li></Link>
                     </ul>
                 </div>
                 {
