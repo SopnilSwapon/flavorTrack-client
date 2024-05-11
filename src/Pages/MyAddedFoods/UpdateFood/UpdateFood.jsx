@@ -1,7 +1,9 @@
 import Swal from "sweetalert2";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateFood = () => {
-
+const food = useLoaderData()
+   const {foodName,photo,foodCategory,price, quantity, description, _id} = food;
     const handleUpdateFood = e => {
         e.preventDefault();
         const form = e.target;
@@ -9,13 +11,12 @@ const UpdateFood = () => {
         const foodCategory = form.category.value;
         const quantity = form.quantity.value;
         const price = form.price.value;
-        const origin = form.country.value;
         const description = form.description.value;
         const photo = form.photo.value;
-        const food = {foodName, foodCategory, quantity, price, origin, description, photo, email, name};
+        const food = {foodName, foodCategory, quantity, price, description, photo};
         console.log(food);
-       fetch('http://localhost:5000/food', {
-        method: 'POST',
+       fetch(`http://localhost:5000/foods/${_id}`, {
+        method: 'PUT',
         headers: {
             'content-type': 'application/json'
         },
@@ -24,11 +25,11 @@ const UpdateFood = () => {
        .then(res => res.json())
        .then(data => {
         console.log(data);
-        if(data.insertedId){
+        if(data.modifiedCount){
             Swal.fire({
                 icon: "success",
                 title: "YAY",
-                text: "This food Successfully added!",
+                text: "This food Successfully Update!",
         })}
        })
     }
@@ -43,37 +44,32 @@ const UpdateFood = () => {
         <div className="w-2/3 mx-auto space-y-2">
             <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sky-300 text-xl">Food Name :</label>
-                <input type="text" name="name"  className="w-full pl-3 py-2" />
+                <input type="text" name="name" defaultValue={foodName}  className="w-full pl-3 py-2" />
             </div>
             <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sky-300 text-xl">Food Category :</label>
-                <input type="text" name="category" className="w-full pl-3 py-2" />
+                <input type="text" name="category" defaultValue={foodCategory} className="w-full pl-3 py-2" />
             </div>
             <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sky-300 text-xl">Quantity :</label>
-                <input type="text" name="quantity" className="w-full pl-3 py-2" />
+                <input type="text" name="quantity" defaultValue={quantity} className="w-full pl-3 py-2" />
             </div>
             <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sky-300 text-xl">Price :</label>
-                <input type="text" name="price" className="w-full pl-3 py-2" />
-            </div>
-            <div className="col-span-full sm:col-span-3">
-                <label htmlFor="firstname" className="text-sky-300 text-xl">Food Origin (country) :</label>
-                <input type="text" name="country" className="w-full pl-3 py-2" />
+                <input type="text" name="price" defaultValue={price} className="w-full pl-3 py-2" />
             </div>
             <div className="col-span-full ">
                 <label htmlFor="firstname" className="text-sky-300 text-xl">Photo URL :</label>
-                <input type="text" name="photo" className="w-full pl-3 py-2" />
+                <input type="text" name="photo" defaultValue={photo} className="w-full pl-3 py-2" />
             </div>
             <div className="col-span-full ">
                 <label htmlFor="firstname" className="text-sky-300 text-xl">Description :</label>
-                <input type="text" name="description" className="w-full pl-3 py-2" />
+                <input type="text" name="description" defaultValue={description} className="w-full pl-3 py-2" />
             </div>
             <div className="flex justify-center">
-                <button className="btn ghost px-10"><input type="submit" value="Add Food" />
+                <button className="btn ghost px-10"><input type="submit" value="Update Food" />
                 </button>
             </div>
-            
         </div>
     </fieldset>
 </form>
