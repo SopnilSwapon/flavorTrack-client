@@ -7,6 +7,8 @@ import Register from "../Authentication/Register/Register";
 import AllFoods from "../Pages/AllFoods/AllFoods";
 import AddFoodItem from "../Pages/AddFoodItem/AddFoodItem";
 import FoodDetails from "../Pages/FoodDetails/FoodDetails";
+import MyAddedFoods from "../Pages/MyAddedFoods/MyAddedFoods";
+import UpdateFood from "../Pages/MyAddedFoods/UpdateFood/UpdateFood";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
         {
           path: '/fooddetails',
           element: <FoodDetails></FoodDetails>
+        },
+        {
+          path: '/myaddedfoods',
+          element: <MyAddedFoods></MyAddedFoods>
+        },
+        {
+          path:'/updatefood',
+          element: <UpdateFood></UpdateFood>
         }
       ]
     },
