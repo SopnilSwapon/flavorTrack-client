@@ -1,8 +1,14 @@
+import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const FoodDetails = () => {
-    const { food } = useAuth();
-    const { foodName, name, photo, foodCategory, price, origin, quantity, description} = food;
+    const { food, handleFoodDetails,loading } = useAuth();
+    if(loading){
+        return <div>
+            .........loading
+        </div>
+    }
+    const { foodName, name, _id, photo, foodCategory, price, origin, quantity, description} = food;
     return (
         <div className="bg-gray-300 pt-24">
              <h2 className="text-3xl font-bold text-center pt-4">{foodName}</h2>
@@ -24,7 +30,7 @@ const FoodDetails = () => {
             <p><span className="font-bold">Made by : </span>{name}</p>
             
             <div className="card-actions pb-5 pt-2">
-                <button className="btn bg-purple-500 text-white hover:bg-black">Purchase</button>
+            <button onClick={()=>handleFoodDetails(_id)} className="btn bg-purple-500 text-white hover:bg-black"><Link to='/purchasefood'>Purchase</Link></button>
             </div>
         </div>
     </div>

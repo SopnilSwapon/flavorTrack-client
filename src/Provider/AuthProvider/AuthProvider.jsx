@@ -48,11 +48,12 @@ useEffect(()=> {
 },[]);
 // ________get a specific data___________//
 const handleFoodDetails = (id) =>{
+    setLoading(true)
     axios.get(`http://localhost:5000/foods/${id}`)
     .then(res =>{
         console.log(res.data);
         setFood(res.data);
-        setLoading(true)
+        setLoading(false)
     })
 }
 

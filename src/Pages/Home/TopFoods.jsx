@@ -12,6 +12,7 @@ const TopFoods = () => {
 
             })
     }, []);
+    // http://localhost:5000/foods/six?size=6&sort=-1
     console.log(foods);
     return (
         <div>
