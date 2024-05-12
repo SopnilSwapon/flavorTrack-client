@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types'
-
-const Food = ({food}) => {
-    // const {handleFoodDetails} = useAuth();
+const SearchFoods = ({food}) => {
     const {foodName,photo,foodCategory,price, quantity, _id} = food;
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -25,7 +23,7 @@ const Food = ({food}) => {
     );
 };
 
-export default Food;
-Food.propTypes = {
-   food: PropTypes.object
-}
+export default SearchFoods;
+SearchFoods.propTypes = {
+    food: PropTypes.object
+ }
