@@ -70,7 +70,14 @@ const PurchaseFood = () => {
                 <div className="flex flex-col p-6">
                     <div>
                     </div>
-                    <h2 className="text-xl font-semibold text-sky-300 pt-12 pb-2">Food Name: {foodName}</h2>
+               <div className="flex flex-col justify-between md:flex-row lg:flex-row items-center">
+               <h2 className="text-xl font-semibold text-sky-300 pt-12 pb-2">Food Name: {foodName}</h2>
+                    <div>
+            {
+                original_Quantity ? <button className="badge badge-outline badge-primary p-3 text-2xl text-end font-bold">Available</button> : <button className=" text-end text-2xl font-bold badge text-white badge-outline bg-red-500 p-4">SoldOut</button>
+             }
+               </div>
+            </div>
                     <div className=" bg-gray-200 p-2 rounded-md">
                         <img src={photo} alt="" className="rounded-sm mx-auto" />
                     </div>
@@ -113,7 +120,7 @@ const PurchaseFood = () => {
                                         <input type="text" disabled defaultValue={user?.email} name="email" className="w-full pl-3 py-2" />
                                     </div>
                                     <div className="flex justify-center">
-                                        <button className={`btn bg-pink-500 text-white font-bold mt-2 px-10 ${original_Quantity == 0 ? 'disabled' : 'block'}`}><input type="submit" disabled value="Purchase" />
+                                        <button disabled={original_Quantity ===0} className={`btn bg-pink-500 text-white font-bold mt-2 px-10`}><input type="submit" value="Purchase" />
                                         </button>
                                     </div>
 

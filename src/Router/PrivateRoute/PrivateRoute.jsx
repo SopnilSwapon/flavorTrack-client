@@ -10,7 +10,7 @@ const PrivateRoute = ({children}) => {
     if(user){
         return children;
     }
-    return navigate('/login')
+    return navigate('/signin')
 };
 
 export default PrivateRoute;

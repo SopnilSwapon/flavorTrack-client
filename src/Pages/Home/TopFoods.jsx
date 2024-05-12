@@ -6,14 +6,15 @@ import { Link } from "react-router-dom";
 const TopFoods = () => {
     const [foods, setFoods] = useState([]);
     useEffect(() => {
-        axios.get('/foods.json')
+        axios.get('http://localhost:5000/foods/six?size=6&sort=-1')
             .then(res => {
                 setFoods(res.data)
 
             })
     }, []);
-    // http://localhost:5000/foods/six?size=6&sort=-1
     console.log(foods);
+    // http://localhost:5000/foods/six?size=6&sort=-1
+    console.log(foods.foodName);
     return (
         <div>
             <h2 className="text-4xl text-center font-bold text-pink-500 my-10">Most Sells Foods</h2>
