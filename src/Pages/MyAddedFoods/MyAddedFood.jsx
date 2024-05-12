@@ -1,7 +1,8 @@
 import { BiSolidEdit } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 const MyAddedFood = ({food}) => {
-    const {foodName,photo,foodCategory,price, quantity, _id} = food;
+    const {foodName,photo,price, quantity, _id} = food;
     return (
             <tr>
       
@@ -26,14 +27,11 @@ const MyAddedFood = ({food}) => {
           </button>
           
       </th>
-      {/* <th>
-       {
-        status === 'confirm' ? <span className="font-bold text-blue-700">Confirmed</span> : <button onClick={()=>handleOrderConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>
- 
-       }
-      </th> */}
     </tr>
     );
 };
 
 export default MyAddedFood;
+MyAddedFood.propTypes = {
+  food: PropTypes.object
+}

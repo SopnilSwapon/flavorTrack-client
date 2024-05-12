@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
+import { NavLink } from "react-router-dom";
+// import useAuth from "../../Hooks/useAuth";
 import PropTypes from 'prop-types'
 
 const Food = ({food}) => {
-    const {handleFoodDetails} = useAuth();
+    // const {handleFoodDetails} = useAuth();
     const {foodName,photo,foodCategory,price, quantity, _id} = food;
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -19,7 +19,7 @@ const Food = ({food}) => {
                 </div>
                 <div className="card-actions pb-5">
                      
-                    <button onClick={()=>handleFoodDetails(_id)} className="badge badge-outline badge-secondary p-3 hover:bg-black"><Link to='/fooddetails'>Details</Link></button>
+                    <button className="badge badge-outline badge-secondary p-3 hover:bg-black"><NavLink to={`/fooddetails/${_id}`}>Details</NavLink></button>
                 </div>
             </div>
         </div>
