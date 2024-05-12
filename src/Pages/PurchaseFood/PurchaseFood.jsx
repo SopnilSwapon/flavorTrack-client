@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const PurchaseFood = () => {
     const { user } = useAuth();
     const food = useLoaderData();
-    const { foodName, photo, foodCategory, purchase:currentPurchase, price, quantity: original_Quantity, _id, name, description } = food;
+    const { foodName, photo, foodCategory, purchase:currentPurchase, price, quantity: original_Quantity,email, _id, name, description } = food;
     
     const handlePurchase = e => {
         e.preventDefault();
@@ -14,10 +14,18 @@ const PurchaseFood = () => {
         const foodOwner = name;
         const date = moment().format("YYYY-MM-DD HH:mm:ss");
         const purchaseQuantity = parseInt(e.target.quantity.value);
+        const buyer_email = user?.email
         const quantity = original_Quantity - purchaseQuantity;
          let purchase = currentPurchase + purchaseQuantity;
-        const newFood = { foodOwner, photo, foodName, price, date, };
+        const newFood = { foodOwner,buyer_email, photo, foodName, price, date, };
         const updateFood = { foodName, purchase, foodCategory, quantity, price, description, photo };
+        if(user?.email == email ){
+            return Swal.fire({
+                icon: "error",
+                title: "This is your food",
+                text: "You should not buy this food",
+        })
+        }
         // console.log('update quantity', newQuantity);
         if (quantity < 0) {
            return Swal.fire({
@@ -57,9 +65,6 @@ const PurchaseFood = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // if (data.modifiedCount) {
-                //     alert('update successful')
-                // }
                 console.log(data);
             })
 

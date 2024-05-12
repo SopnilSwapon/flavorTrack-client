@@ -54,7 +54,7 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4  shadow bg-gray-400 rounded-box w-52">
                         <Link to='/myaddedfoods'><li>My added food items</li></Link>
                         <Link className="py-2" to='/addfooditem'><li>Add a food item</li></Link>
-                        <Link to='/addfooditem'><li>My ordered food items</li></Link>
+                        <Link to='/myorders'><li>My ordered food items</li></Link>
                     </ul>
                 </div>
                 {

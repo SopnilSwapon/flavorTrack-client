@@ -19,7 +19,7 @@ const MyAddedFood = ({food}) => {
         <p> {foodName}</p>
       </td>
       <td>{quantity}</td>
-      <td>{price}</td>
+      <td>${price}</td>
       <th>
           <button className="btn btn-circle text-3xl 
           btn-sm"><Link to={`/updatefood/${_id}`}>
