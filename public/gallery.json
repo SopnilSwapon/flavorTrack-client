@@ -1,0 +1,33 @@
+[
+    {
+      "user_name": "FoodieFan123",
+      "Feedback": "The pizza was a culinary masterpiece! The blend of toppings was a delightful explosion of flavor, and the crust had a perfect balance of crispiness and chewiness.",
+      "Image_url": "https://img.freepik.com/premium-photo/whole-italian-pizza-wooden-table-with-ingredients_251318-13.jpg?w=740"
+    },
+    {
+      "user_name": "SoupLover87",
+      "Feedback": "The soup was a warm embrace on a chilly day! Every spoonful was like a journey through comfort, with each ingredient adding its own depth to the delightful medley of flavors.",
+      "Image_url": "https://img.freepik.com/free-photo/boiling-cauldron-simmers-hearty-vegetable-soup-recipe-generated-by-ai_188544-10271.jpg?t=st=1715540220~exp=1715543820~hmac=7c70f8acec9a9c79a94bd06b1760281b1491c6d22ec8b375394518a2c66c09d2&w=740"
+    },
+    {
+      "user_name": "BurgerAficionado55",
+      "Feedback": "The burger was a symphony of taste! Each layer, from the juicy patty to the fresh vegetables, harmonized perfectly to create a mouthwatering experience with every bite.",
+      "Image_url": "https://img.freepik.com/free-photo/grilled-beef-burger-with-fries-cheese-tomato-generative-ai_188544-8466.jpg?t=st=1715540292~exp=1715543892~hmac=f649687f58f29115fea9446469ff8c2e1925ef5ae0862bbfca6bc749574344c9&w=740"
+    },
+    {
+      "user_name": "SteakConnoisseur99",
+      "Feedback": "The steak was an absolute triumph! Cooked to perfection, it boasted a succulence that was matched only by the expertly balanced seasoning, making every morsel a delight to savor.",
+      "Image_url": "https://img.freepik.com/premium-photo/japanese-ramen-noodle-with-grilled-salmon-egg-wooden-table_304782-1581.jpg?w=740"
+    },
+    {
+      "user_name": "CoffeeAddict22",
+      "Feedback": "The coffee was a morning revelation! Rich and aromatic, it awakened my senses with its bold flavor, setting the perfect tone for a day filled with energy and focus.",
+      "Image_url": "https://img.freepik.com/free-photo/cup-black-coffee-isolated-generative-al_169016-28501.jpg?t=st=1715540429~exp=1715544029~hmac=adf4fe33c2b764d8bd7ed1cd898a06fb08ed7ae29ae10673ca307087dfc4b863&w=740"
+    },
+    {
+      "user_name": "PastaExplorer18",
+      "Feedback": "The pasta was a culinary journey to Italy! The al dente noodles danced in a sauce bursting with flavor, transporting me to the streets of Rome with every forkful.",
+      "Image_url": "https://img.freepik.com/free-photo/authentic-italian-pasta_24972-2334.jpg?t=st=1715540469~exp=1715544069~hmac=8bd1ce268b9a85c957e2872d841d4ff2e5c5173bae96ee710d29324ddd6c9d2c&w=740"
+    }
+  ]
+  

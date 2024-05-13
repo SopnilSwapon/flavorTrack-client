@@ -17,8 +17,11 @@ const AllFoods = () => {
         })
     },[]);
     const handleSearch = e => {
+
         e.preventDefault();
-        const searchField = e.target.search.value;
+        let searchField = e.target.search.value;
+           searchField = searchField.charAt(0).toUpperCase() + searchField.slice(1);
+
         axios.get(`http://localhost:5000/foods/search/${searchField}`)
         .then(res =>{
             setSearchFood(res.data);
