@@ -44,13 +44,13 @@ useEffect(()=> {
         console.log(currentUser);
         setLoading(false);
         if(currentUser){
-            axios.post('http://localhost:5000/jwt', loaggedUser , {withCredentials: true})
+            axios.post('https://flavortrack-server.vercel.app/jwt', loaggedUser , {withCredentials: true})
             .then(res =>{
                 console.log("response user",  res.data);
             })
         }
         if(!currentUser){
-            axios.post('http://localhost:5000/logOut', loaggedUser, {withCredentials: true})
+            axios.post('https://flavortrack-server.vercel.app/logOut', loaggedUser, {withCredentials: true})
             .then(res =>{
                 console.log(res.data);
             })
@@ -62,7 +62,7 @@ useEffect(()=> {
 },[]);
 // ________get a specific data___________//
 const handleFoodDetails = (id) =>{
-    axios.get(`http://localhost:5000/foods/${id}`)
+    axios.get(`https://flavortrack-server.vercel.app/foods/${id}`)
     .then(res =>{
         console.log(res.data);
         if(!loading){

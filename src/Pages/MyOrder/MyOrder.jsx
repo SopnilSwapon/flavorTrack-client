@@ -7,7 +7,7 @@ const MyOrder = () => {
     const {user} = useAuth();
     const [myFoods, setMyFoods] = useState([]);
     useEffect(()=> {
-        axios.get(`http://localhost:5000/purchase/${user?.email}`)
+        axios.get(`https://flavortrack-server.vercel.app/purchase/${user?.email}`)
         .then(result =>{
            setMyFoods(result.data)
         })

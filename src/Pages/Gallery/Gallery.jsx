@@ -9,7 +9,7 @@ const Gallery = () => {
     const navigate = useNavigate();
     const {user} = useAuth()
     const [galleryFoods, setGalleryFoods] = useState([]);
-    fetch('http://localhost:5000/gallery')
+    fetch('https://flavortrack-server.vercel.app/gallery')
     .then(res => res.json())
     .then(data =>{
         setGalleryFoods(data)
@@ -21,7 +21,7 @@ const Gallery = () => {
       const Image_url = e.target.photo.value;
       const Feedback = e.target.feedback.value;
       const newFood = {user_name, Image_url, Feedback };
-      fetch('http://localhost:5000/galleryfood', {
+      fetch('https://flavortrack-server.vercel.app/galleryfood', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

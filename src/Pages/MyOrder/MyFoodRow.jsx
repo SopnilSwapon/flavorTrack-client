@@ -16,7 +16,7 @@ const MyFoodRow = ({food}) => {
               })
               .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/purchase/${_id}`, {
+                    fetch(`https://flavortrack-server.vercel.app/purchase/${_id}`, {
                 method: 'DELETE'
             })
             .then(res =>res.json())

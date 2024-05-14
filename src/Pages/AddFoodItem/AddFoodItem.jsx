@@ -17,7 +17,7 @@ const AddFoodItem = () => {
         const photo = form.photo.value;
         const food = {foodName, foodCategory, quantity, price, origin, description, photo, email, name};
         console.log(food);
-       fetch('http://localhost:5000/food', {
+       fetch('https://flavortrack-server.vercel.app/food', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
