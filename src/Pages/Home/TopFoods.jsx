@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const TopFoods = () => {
     const [foods, setFoods] = useState([]);
     useEffect(() => {
-        axios.get('https://flavortrack-server.vercel.app/foods/six?size=6&sort=-1')
+        axios.get('https://flavortrack-a59b2.firebaseapp.com/foods/six?size=6&sort=-1')
             .then(res => {
                 setFoods(res.data)
 
             })
     }, []);
     console.log(foods);
-    // https://flavortrack-server.vercel.app/foods/six?size=6&sort=-1
+    // https://flavortrack-a59b2.firebaseapp.com/foods/six?size=6&sort=-1
     console.log(foods.foodName);
     return (
         <div>

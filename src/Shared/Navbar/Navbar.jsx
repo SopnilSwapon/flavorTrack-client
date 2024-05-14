@@ -23,6 +23,7 @@ const Navbar = () => {
         <Link to='/'><li>Home</li></Link>
         <Link to='/allfoods'><li>All Foods</li></Link>
         <Link to='/gallery'><li>Gallery</li></Link>
+        <Link to='/contact'><li>Contact Us</li></Link>
     </div>
     return (
         <div className="navbar fixed z-10 bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 rounded text-white">

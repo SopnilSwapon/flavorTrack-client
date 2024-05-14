@@ -36,7 +36,7 @@ const PurchaseFood = () => {
         }
         
         //_________ purchase food_______________ //
-        fetch('https://flavortrack-server.vercel.app/purchase', {
+        fetch('https://flavortrack-a59b2.firebaseapp.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -56,7 +56,7 @@ const PurchaseFood = () => {
         //_______update food___________//
         // const food = { foodName, foodCategory, quantity, price, description, photo };
         // console.log(food);
-        fetch(`https://flavortrack-server.vercel.app/foods/${_id}`, {
+        fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

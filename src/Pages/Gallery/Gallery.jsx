@@ -9,7 +9,7 @@ const Gallery = () => {
     const navigate = useNavigate();
     const {user} = useAuth()
     const [galleryFoods, setGalleryFoods] = useState([]);
-    fetch('https://flavortrack-server.vercel.app/gallery')
+    fetch('https://flavortrack-a59b2.firebaseapp.com/gallery')
     .then(res => res.json())
     .then(data =>{
         setGalleryFoods(data)
@@ -21,7 +21,7 @@ const Gallery = () => {
       const Image_url = e.target.photo.value;
       const Feedback = e.target.feedback.value;
       const newFood = {user_name, Image_url, Feedback };
-      fetch('https://flavortrack-server.vercel.app/galleryfood', {
+      fetch('https://flavortrack-a59b2.firebaseapp.com/galleryfood', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

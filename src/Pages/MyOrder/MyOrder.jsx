@@ -6,12 +6,15 @@ import MyFoodRow from "./MyFoodRow";
 const MyOrder = () => {
     const {user} = useAuth();
     const [myFoods, setMyFoods] = useState([]);
+    const loggedEmail = user?.email;
     useEffect(()=> {
-        axios.get(`https://flavortrack-server.vercel.app/purchase/${user?.email}`)
+        axios.get(`https://flavortrack-a59b2.firebaseapp.com/purchase/${loggedEmail}`,{
+          withCredentials: true
+        })
         .then(result =>{
            setMyFoods(result.data)
         })
-    },[user]);
+    },[user, loggedEmail]);
     console.log(myFoods);
     return (
         <div className="overflow-x-auto bg-gray-300 pt-24 min-h-[calc(100vh-276px)]">

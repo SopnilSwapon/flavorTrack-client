@@ -15,7 +15,7 @@ const food = useLoaderData()
         const photo = form.photo.value;
         const food = {foodName, foodCategory, quantity, price, description, photo};
         console.log(food);
-       fetch(`https://flavortrack-server.vercel.app/foods/${_id}`, {
+       fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${_id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

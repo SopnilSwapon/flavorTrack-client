@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const axiosSecure = axios.create({
-    baseURL: 'https://flavortrack-server.vercel.app',
+    baseURL: 'https://flavortrack-a59b2.firebaseapp.com',
     withCredentials: true
 })
 const useAxiosSecure = () => {

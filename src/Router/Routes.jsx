@@ -13,6 +13,7 @@ import PurchaseFood from "../Pages/PurchaseFood/PurchaseFood";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import MyOrder from "../Pages/MyOrder/MyOrder";
 import Gallery from "../Pages/Gallery/Gallery";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
         {
           path: '/fooddetails/:id',
           element:<FoodDetails></FoodDetails>,
-          loader: ({params}) =>fetch(`https://flavortrack-server.vercel.app/foods/${params.id}`)
+          loader: ({params}) =>fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${params.id}`)
         },
         {
           path: '/myaddedfoods',
@@ -52,12 +53,12 @@ const router = createBrowserRouter([
         {
           path:'/updatefood/:id',
           element: <UpdateFood></UpdateFood>,
-          loader: ({params}) =>fetch(`https://flavortrack-server.vercel.app/foods/${params.id}`)
+          loader: ({params}) =>fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${params.id}`)
         },
       {
         path:'/purchasefood/:id',
         element: <PrivateRoute><PurchaseFood></PurchaseFood></PrivateRoute>,
-        loader: ({params}) =>fetch(`https://flavortrack-server.vercel.app/foods/${params.id}`)
+        loader: ({params}) =>fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${params.id}`)
       },
       {
         path: '/myorders',
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: '/gallery',
         element: <Gallery></Gallery>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
       }
       ]
     },
