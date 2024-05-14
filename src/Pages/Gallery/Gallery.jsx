@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import titlePic from '../../assets/bannerFouteen.jpg'
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
@@ -9,11 +9,13 @@ const Gallery = () => {
     const navigate = useNavigate();
     const {user} = useAuth()
     const [galleryFoods, setGalleryFoods] = useState([]);
-    fetch('https://flavortrack-a59b2.firebaseapp.com/gallery')
+    useEffect(() =>{
+    fetch('https://flavortrack-server.vercel.app/gallery')
     .then(res => res.json())
     .then(data =>{
         setGalleryFoods(data)
     })
+    },[])
     console.log(galleryFoods);
     const handleAddFoodGallery = e =>{
       e.preventDefault();
@@ -21,7 +23,7 @@ const Gallery = () => {
       const Image_url = e.target.photo.value;
       const Feedback = e.target.feedback.value;
       const newFood = {user_name, Image_url, Feedback };
-      fetch('https://flavortrack-a59b2.firebaseapp.com/galleryfood', {
+      fetch('https://flavortrack-server.vercel.app/galleryfood', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

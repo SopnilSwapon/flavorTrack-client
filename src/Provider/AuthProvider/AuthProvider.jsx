@@ -44,13 +44,13 @@ useEffect(()=> {
         console.log(currentUser);
         setLoading(false);
         if(currentUser){
-            axios.post('https://flavortrack-a59b2.firebaseapp.com/jwt', loaggedUser , {withCredentials: true})
+            axios.post('https://flavortrack-server.vercel.app/jwt', loaggedUser , {withCredentials: true})
             .then(res =>{
                 console.log("response user",  res.data);
             })
         }
         if(!currentUser){
-            axios.post('https://flavortrack-a59b2.firebaseapp.com/logOut', loaggedUser, {withCredentials: true})
+            axios.post('https://flavortrack-server.vercel.app/logOut', loaggedUser, {withCredentials: true})
             .then(res =>{
                 console.log(res.data);
             })
@@ -62,7 +62,7 @@ useEffect(()=> {
 },[]);
 // ________get a specific data___________//
 const handleFoodDetails = (id) =>{
-    axios.get(`https://flavortrack-a59b2.firebaseapp.com/foods/${id}`)
+    axios.get(`https://flavortrack-server.vercel.app/foods/${id}`)
     .then(res =>{
         console.log(res.data);
         if(!loading){

@@ -8,7 +8,7 @@ const MyOrder = () => {
     const [myFoods, setMyFoods] = useState([]);
     const loggedEmail = user?.email;
     useEffect(()=> {
-        axios.get(`https://flavortrack-a59b2.firebaseapp.com/purchase/${loggedEmail}`,{
+        axios.get(`https://flavortrack-server.vercel.app/purchase/${loggedEmail}`,{
           withCredentials: true
         })
         .then(result =>{

@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         {
           path: '/fooddetails/:id',
           element:<FoodDetails></FoodDetails>,
-          loader: ({params}) =>fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${params.id}`)
+          loader: ({params}) =>fetch(`https://flavortrack-server.vercel.app/foods/${params.id}`)
         },
         {
           path: '/myaddedfoods',
@@ -53,12 +53,12 @@ const router = createBrowserRouter([
         {
           path:'/updatefood/:id',
           element: <UpdateFood></UpdateFood>,
-          loader: ({params}) =>fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${params.id}`)
+          loader: ({params}) =>fetch(`https://flavortrack-server.vercel.app/foods/${params.id}`)
         },
       {
         path:'/purchasefood/:id',
         element: <PrivateRoute><PurchaseFood></PurchaseFood></PrivateRoute>,
-        loader: ({params}) =>fetch(`https://flavortrack-a59b2.firebaseapp.com/foods/${params.id}`)
+        loader: ({params}) =>fetch(`https://flavortrack-server.vercel.app/foods/${params.id}`)
       },
       {
         path: '/myorders',

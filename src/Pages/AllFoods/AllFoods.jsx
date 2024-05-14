@@ -10,7 +10,7 @@ const AllFoods = () => {
     const [searchFood, setSearchFood] = useState(null)
     const [foods, setFoods] = useState([]);
     useEffect(()=>{
-        axios.get('https://flavortrack-a59b2.firebaseapp.com/foods')
+        axios.get('https://flavortrack-server.vercel.app/foods')
         .then(res => {
             setFoods(res.data);
             setHaveNotSeachFood(true)
@@ -22,7 +22,7 @@ const AllFoods = () => {
         let searchField = e.target.search.value;
            searchField = searchField.charAt(0).toUpperCase() + searchField.slice(1);
 
-        axios.get(`https://flavortrack-a59b2.firebaseapp.com/foods/search/${searchField}`)
+        axios.get(`https://flavortrack-server.vercel.app/foods/search/${searchField}`)
         .then(res =>{
             setSearchFood(res.data);
             setHaveNotSeachFood(false)
