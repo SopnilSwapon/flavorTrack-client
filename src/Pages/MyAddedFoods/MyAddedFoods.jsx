@@ -1,17 +1,19 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import MyAddedFood from "./MyAddedFood";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const MyAddedFoods = () => {
     const {user} = useAuth();
     const [addedFoods, setAddedFoods] = useState([]);
+    const axiosSecure  = useAxiosSecure()
+    const url = `/foods/currentuser/${user?.email}`
     useEffect(() =>{
-        axios(`http://localhost:5000/foods/currentuser/${user?.email}`, {withCredentials: true})
+        axiosSecure(url)
         .then(res =>{
             setAddedFoods(res.data);
         })
-    },[user]);
+    },[url, axiosSecure]);
     return (
         <div className="overflow-x-auto bg-gray-300 pt-24 min-h-[calc(100vh-276px)]">
         <table className="table text-xl">
