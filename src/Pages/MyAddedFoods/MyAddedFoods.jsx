@@ -7,7 +7,7 @@ const MyAddedFoods = () => {
     const {user} = useAuth();
     const [addedFoods, setAddedFoods] = useState([]);
     useEffect(() =>{
-        axios(`http://localhost:5000/foods/currentuser/${user?.email}`)
+        axios(`http://localhost:5000/foods/currentuser/${user?.email}`, {withCredentials: true})
         .then(res =>{
             setAddedFoods(res.data);
         })

@@ -38,9 +38,23 @@ const logOut = () =>{
 
 useEffect(()=> {
   const unSubscriber = onAuthStateChanged(auth, (currentUser) => {
+       const userEmail = currentUser?.email || user?.email;
+       const loaggedUser = {email: userEmail};
         setUser(currentUser)
         console.log(currentUser);
-        setLoading(false)
+        setLoading(false);
+        if(currentUser){
+            axios.post('http://localhost:5000/jwt', loaggedUser , {withCredentials: true})
+            .then(res =>{
+                console.log("response user",  res.data);
+            })
+        }
+        if(!currentUser){
+            axios.post('http://localhost:5000/logOut', loaggedUser, {withCredentials: true})
+            .then(res =>{
+                console.log(res.data);
+            })
+        }
     })
     return () =>{
         return unSubscriber;
