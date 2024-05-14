@@ -2,11 +2,11 @@ import Lottie from "lottie-react";
 import messages from '../../assets/Animation - 1715676825263.json'
 const Contact = () => {
     return (
-        <section className="py-6 pt-16 min-h-[calc(100vh-150px)] bg-green-200 dark:text-gray-900">
+        <section className="py-6 pt-24 min-h-[calc(100vh-150px)] bg-green-200 dark:text-gray-900">
 	<div className="">
 	<Lottie animationData={messages} className="w-[150px] mx-auto md:col-span-2 lg:col-span-2 left-24 z-0"></Lottie>
-		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-[90%] mx-auto">
-			<div className="space-y-4 w-full mx-auto text-center">
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 space-y-10 w-[90%] mx-auto">
+			<div className="space-y-4 w-full mx-auto mt-10 text-center">
 			<h1 className="text-4xl font-bold">Contact Us</h1>
 			<p className="pt-2 pb-4">Fill in the form to start a conversation</p>
 			<p className="flex items-center justify-center">
