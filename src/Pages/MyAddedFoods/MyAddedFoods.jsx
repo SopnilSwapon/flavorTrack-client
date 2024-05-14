@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import MyAddedFood from "./MyAddedFood";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 const MyAddedFoods = () => {
     const {user} = useAuth();
@@ -17,7 +18,9 @@ const MyAddedFoods = () => {
     return (
         <div className="overflow-x-auto bg-gray-300 pt-24 min-h-[calc(100vh-276px)]">
         <table className="table text-xl">
-          {/* head */}
+          <Helmet>
+            <title>Profile||Added</title>
+          </Helmet>
           <thead>
             <tr className="text-xl">
               <th>Image</th>

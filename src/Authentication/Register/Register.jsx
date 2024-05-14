@@ -3,6 +3,7 @@ import regPic from '../../assets/login.jpg'
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const {createUser} = useAuth();
@@ -40,6 +41,9 @@ const Register = () => {
     }
     return (
         <div className="hero pt-24 mb-20 bg-base-200">
+          <Helmet>
+          <title>FlavorTrack||Register</title>
+          </Helmet>
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center mr-12 w-1/2 lg:text-left">
             <img src={regPic} alt="" />

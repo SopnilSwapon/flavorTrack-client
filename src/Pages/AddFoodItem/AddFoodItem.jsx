@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet";
 
 const AddFoodItem = () => {
     const {user} = useAuth();
@@ -37,6 +38,9 @@ const AddFoodItem = () => {
     }
     return (
         <div>
+            <Helmet>
+            <title>Profile||Add</title>
+            </Helmet>
             <h2 className="text-3xl text-center font-extrabold pt-24 text-purple-600 mb-5">Add Your Favorite Food</h2>
             <p className="w-full md:w-[80%] lg:w-[70%] mx-auto text-center my-2 text-[16px]">You can add any types of foods.If you want to add food you have fill up this below form.If you add any food then you will see this food in all foodPages also see you added form.</p>
         <section className="p-6 bg-gray-400 dark:text-gray-900">

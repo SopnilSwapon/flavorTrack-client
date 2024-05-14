@@ -2,11 +2,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 const TopFood = ({food}) => {
 
-   const {foodName,photo,foodCategory,price, quantity, _id} = food;
+   const {foodName,photo,foodCategory,price, _id} = food;
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className="pt-4">
-                <img src={photo} alt="Shoes" className="rounded-xl w-[350px] h-[200px]" />
+                <img src={photo} alt="Shoes" className="rounded-xl w-[85%] md:w-[360px] lg:w-[350px] h-[320px] md:h-[200px] lg:h-[200px]" />
             </figure>
             <div className="pl-10 items-center">
                 <h2 className="card-title py-2">Food Name: {foodName}</h2>

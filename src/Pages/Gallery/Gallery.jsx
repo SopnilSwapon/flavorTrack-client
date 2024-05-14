@@ -3,6 +3,7 @@ import titlePic from '../../assets/bannerFouteen.jpg'
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const Gallery = () => {
@@ -51,6 +52,9 @@ const Gallery = () => {
     }
     return (
       <div className="pt-16 bg-sky-200">
+        <Helmet>
+          <title>FlavorTrack||Gallery</title>
+        </Helmet>
         <div className="bg-no-repeat bg-cover" style={{backgroundImage:`url(${titlePic})`}}>
         <h2 className="text-4xl font-bold text-center text-white pt-6">Add Your Favorite Food in Our Gallery</h2>
         <p className="pb-4 text-center font-bold text-white">You can add your favorite food in our section.if you want to add please scroll down and find add button.Everyone see your favorite food in our section there have mentioned your name.That will be my pleasure if you add your favorite food and share your experience also have you possible share our specialty</p>

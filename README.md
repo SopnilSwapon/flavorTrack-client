@@ -24,7 +24,8 @@ Welcome to FlaverTrack, a full-stack restaurant management website designed to s
 FlaverTrack ensures the security of your data with private routes secured by JWT tokens. These routes include:
 - **My Orders:** View your past orders and current order status securely.
 - **Add Food:** Access the private route to add new food items to the menu, ensuring only authorized users can contribute.
-- **My Added Food:** Keep track of the dishes you've added to FlaverTrack, accessible only to you.
+- **My Added Foods:** Keep track of the dishes you've added to FlaverTrack, accessible only to you.
+- **Add Food at Gallery** You can add your favorite food in our gallery section with a feedback.
 - **Purchase Food:** Securely place orders for food items using the private route, ensuring the privacy of your transactions.
 
 ## Contact Us:

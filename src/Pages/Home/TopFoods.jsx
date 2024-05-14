@@ -13,7 +13,6 @@ const TopFoods = () => {
             })
     }, []);
     console.log(foods);
-    // https://flavortrack-server.vercel.app/foods/six?size=6&sort=-1
     console.log(foods.foodName);
     return (
         <div>

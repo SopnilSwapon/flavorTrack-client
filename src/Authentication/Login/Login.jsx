@@ -3,6 +3,7 @@ import loginPic from '../../assets/login.jpg'
 import useAuth from '../../Hooks/useAuth';
 import { FcGoogle } from "react-icons/fc";
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet';
 const Login = () => {
     const {login, googleLogin} = useAuth();
     const handleLogin = e => {
@@ -41,6 +42,9 @@ const Login = () => {
    
     return (
         <div className="hero pt-20 mb-20 bg-base-200">
+          <Helmet>
+          <title>FlavorTrack||Login</title>
+          </Helmet>
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             <img src={loginPic} alt="" />
