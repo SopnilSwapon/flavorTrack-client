@@ -36,7 +36,7 @@ const Gallery = () => {
         if(data.insertedId){
           Swal.fire({
             icon: "success",
-            title: "Login Successful",
+            title: "Successfully added our gallery.",
           });
         }
       })
@@ -62,7 +62,7 @@ const Gallery = () => {
          <div className="pt-7 pb-4 grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3">
      {
         galleryFoods.map(food=> <div key={food._id}>
-               <div className="w-full h-64 group relative">
+               <div className="w-full h-64 group relative border border-red-700">
           <div className="opacity-100 w-full duration-300 absolute inset-0 bg-cover bg-center z-0 overflow-hidden" style={{backgroundImage: `url(${food.
 Image_url})`}}>
 
@@ -97,13 +97,13 @@ Image_url})`}}>
 				</div>
 				<div className="col-span-full sm:col-span-3">
 					<label htmlFor="firstname" className="text-[18px] font-bold block">PHOTO URL</label>
-					<input type="text" name="photo" className="p-4 outline rounded border-2 w-full" placeholder="image link" id="" />
+					<input type="text" name="photo" required className="p-4 outline rounded border-2 w-full" placeholder="image link" id="" />
 				</div>
 				<div className="col-span-full sm:col-span-3">
 					<label htmlFor="firstname" className="text-[18px] font-bold block">FeedBack</label>
-					<input type="text" name="feedback" className="p-4 outline rounded border-2 w-full" placeholder="Type your experience" id="" />
+					<input type="text" name="feedback" className="p-4 py-8 outline rounded border-2 w-full" placeholder="Type your experience" id="" />
 				</div>
-        <input type="submit" value="FOOD ADD" />
+        <input className="btn bg-black text-white mt-3" type="submit" value="FOOD ADD" />
       </form>
     </div>
 </dialog>
