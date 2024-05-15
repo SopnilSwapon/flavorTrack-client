@@ -1,0 +1,27 @@
+[
+    {
+      "Category_name": "Exclusive",
+      "price": 60,
+      "image": "https://img.freepik.com/premium-photo/gastronomy-great-outdoors-capturing-flavors-nature_865967-673605.jpg?w=740",
+      "description": "Experience unparalleled luxury in our Exclusive rooms, featuring exquisite decor and top-notch amenities."
+    },
+    {
+      "Category_name": "Deluxe",
+      "price": 50,
+      "image": "https://img.freepik.com/premium-photo/gastronomy-great-outdoors-capturing-flavors-nature_865967-826489.jpg?w=740",
+      "description": "Indulge in comfort and style with our Deluxe rooms, offering a blend of elegance and modern convenience."
+    },
+    {
+      "Category_name": "Classic",
+      "price": 40,
+      "image": "https://img.freepik.com/free-photo/tidy-room-with-big-mirror_1203-1491.jpg?t=st=1715744252~exp=1715747852~hmac=b06aaeef5e8dd53dc706e365809791a52ecf5af20b168d4d3faf257550920992&w=740",
+      "description": "Relax in our Classic rooms, featuring cozy interiors and a tranquil ambiance for a peaceful stay."
+    },
+    {
+      "Category_name": "Suite",
+      "price": 30,
+      "image": "https://img.freepik.com/premium-photo/luxury-interior-bedroom-pool-villa-with-cozy-king-bed_41487-149.jpg?w=740",
+      "description": "Escape to luxury in our Suite rooms, offering spacious accommodations and breathtaking views for an unforgettable experience."
+    }
+  ]
+  

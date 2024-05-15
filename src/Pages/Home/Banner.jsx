@@ -42,8 +42,8 @@ const Banner = () => {
                         <div className=""></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="">
-                                <h1 className="mt-52 text-purple-500 md:w-4/6 lg:w-1/2 mx-auto text-5xl font-bold">Veggie Delight Burger</h1>
-                                <p className="mb-5 text-white font-bold">The Veggie Delight Burger is n0t just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
+                                <h1 className="mt-52 opacity-100 text-purple-500 md:w-4/6 lg:w-1/2 mx-auto text-5xl font-bold">Veggie Delight Role</h1>
+                                <p className="mb-5 px-10 text-white font-bold">The Veggie Delight Role is not just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
                                 <Link to='/allfoods'><button className="btn btn-primary">All Foods</button></Link>
                             </div>
                         </div>
@@ -55,8 +55,10 @@ const Banner = () => {
                         <div className=""></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="">
-                                <h1 className="mt-52 text-pink-500 md:w-4/6 lg:w-1/2 mx-auto bg-gray-400 text-5xl font-bold">Veggie Delight Burger</h1>
-                                <p className="mb-5 text-white font-bold">The Veggie Delight Burger is n0t just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
+                                <h1 className="mt-52 text-pink-500 md:w-4/6 lg:w-1/2 mx-auto text-5xl font-bold">Yigger Steak</h1>
+                                <p className="mb-5 px-10 text-white font-bold">
+                                Steak, with its rich aroma and succulent texture, offers a culinary experience that tantalizes the taste buds and satisfies the soul. Each bite is a symphony of flavors, from the charred crust that adds a delightful crunch to the juicy
+                                </p>
                                 <Link to='/allfoods'><button className="btn btn-primary">All Foods</button></Link>
                             </div>
                         </div>
@@ -68,8 +70,8 @@ const Banner = () => {
                         <div className=""></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="">
-                                <h1 className="mt-52 text-pink-500 md:w-4/6 lg:w-1/2 mx-auto text-5xl font-bold">Veggie Delight Burger</h1>
-                                <p className="mb-5 text-white font-bold">The Veggie Delight Burger is n0t just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
+                                <h1 className="mt-52 text-pink-500 md:w-4/6 lg:w-1/2 mx-auto text-5xl font-bold">Eggani Burger</h1>
+                                <p className="mb-5 px-10 text-white font-bold">The Eggani Burger is not just a meal; it iss a celebration of vibrant flavors and nutritious ingredients coming together to create a burger that is as satisfying for your taste buds as it is for your health-conscious sou</p>
                                 <Link to='/allfoods'><button className="btn btn-primary">All Foods</button></Link>
                             </div>
                         </div>
@@ -91,7 +93,6 @@ const Banner = () => {
                 </SwiperSlide>
                 <div className="autoplay-progress" slot="container-end">
                     <svg viewBox="0 0 48 48" ref={progressCircle}>
-                        {/* <circle cx="24" cy="24" r="20"></circle> */}
                     </svg>
                     <span ref={progressContent}></span>
                 </div>
