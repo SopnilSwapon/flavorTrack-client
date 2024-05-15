@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginPic from '../../assets/login.jpg'
 import useAuth from '../../Hooks/useAuth';
 import { FcGoogle } from "react-icons/fc";
 import Swal from 'sweetalert2'
 import { Helmet } from 'react-helmet';
 const Login = () => {
+  const location =useLocation();
+  const navigate = useNavigate();
     const {login, googleLogin} = useAuth();
     const handleLogin = e => {
         e.preventDefault();
@@ -14,6 +16,7 @@ const Login = () => {
         login(email, password)
         .then(res => {
             console.log(res.user);
+            navigate(location?.state ? location.state : '/')
             Swal.fire({
               icon: "success",
               title: "Login Successful",
@@ -34,12 +37,16 @@ const Login = () => {
      .then(result => {
       console.log(result.user);
       console.log('success');
+      navigate(location?.state ? location.state : '/')
+      Swal.fire({
+        icon: "success",
+        title: "Login Successful",
+      });
      })
      .catch(error => {
       console.error(error);
      })
     }
-   
     return (
         <div className="hero pt-20 mb-20 bg-base-200">
           <Helmet>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import regPic from '../../assets/login.jpg'
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 
 const Register = () => {
     const {createUser} = useAuth();
+    const navigate = useNavigate();
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
@@ -23,9 +24,10 @@ const Register = () => {
             photoURL: photo
           })
             console.log(result.user);
+           navigate('/')
             Swal.fire({
               icon: "success",
-              title: "Login Successful",
+              title: "Registration Successful",
             });
             
 

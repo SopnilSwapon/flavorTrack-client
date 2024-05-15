@@ -62,7 +62,7 @@ const Gallery = () => {
          <div className="pt-7 pb-4 grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3">
      {
         galleryFoods.map(food=> <div key={food._id}>
-               <div className="w-full h-64 group relative border border-red-700">
+               <div className="w-full h-64 group relative">
           <div className="opacity-100 w-full duration-300 absolute inset-0 bg-cover bg-center z-0 overflow-hidden" style={{backgroundImage: `url(${food.
 Image_url})`}}>
 
@@ -86,10 +86,7 @@ Image_url})`}}>
       {/* if there is a button in form, it will close the modal */}
       <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
     </form>
-    <h3 className="font-bold text-lg">Hello!</h3>
-    <p className="py-4">Press ESC key or click on ✕ button to close</p>
     <input type="submit" value="ADD FOOD" />
-    {/* <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3"> */}
 			<form onSubmit={handleAddFoodGallery}>
       <div className="col-span-full sm:col-span-3">
 					<label htmlFor="firstname" className="text-[18px] font-bold block">USER NAME</label>

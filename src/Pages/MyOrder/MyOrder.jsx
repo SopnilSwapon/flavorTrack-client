@@ -19,6 +19,8 @@ const MyOrder = () => {
     console.log(myFoods);
     return (
         <div className="overflow-x-auto bg-gray-300 pt-24 min-h-[calc(100vh-276px)]">
+         <h2 className="text-4xl font-bold text-center mb-5">My Order Foods</h2>
+         <hr />
         <table className="table text-xl">
           <Helmet>
           <title>Profile||Order</title>
