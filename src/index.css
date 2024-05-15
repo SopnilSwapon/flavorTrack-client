@@ -3,3 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav a.active{
+    border: 4px solid skyblue;
+    padding: 4px 6px;
+}

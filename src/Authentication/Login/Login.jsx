@@ -31,6 +31,7 @@ const Login = () => {
         })
 
     }
+    console.log(location);
     const handleGoogleLogin = () => {
      console.log(googleLogin);
      googleLogin()

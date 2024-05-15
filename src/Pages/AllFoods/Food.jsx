@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types'
 
 const Food = ({food}) => {
-    // const {handleFoodDetails} = useAuth();
     const {foodName,photo,foodCategory,price, quantity, _id} = food;
     return (
         <div className="card bg-base-100 shadow-xl">

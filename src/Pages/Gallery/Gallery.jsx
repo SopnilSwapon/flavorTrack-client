@@ -63,7 +63,7 @@ const Gallery = () => {
      {
         galleryFoods.map(food=> <div key={food._id}>
                <div className="w-full h-64 group relative">
-          <div className="opacity-100 w-full duration-300 absolute inset-0 bg-cover bg-center z-0 overflow-hidden" style={{backgroundImage: `url(${food.
+          <div className="opacity-100 w-full duration-300 absolute inset-0 bg-cover bg-center z-0 overflow-hidden rounded-lg " style={{backgroundImage: `url(${food.
 Image_url})`}}>
 
                 <div className="opacity-0 duration-1000 bg-black bg-opacity-50 translate-y-64  hover:opacity-100 group-hover:translate-y-0 absolute inset-0 z-10 text-white font-semibold">
@@ -79,11 +79,9 @@ Image_url})`}}>
        <div className="flex justify-center pb-5">
        <button onClick={handleModal} className="badge badge-outline p-6  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 badge-warning flex justify-end"><span className="text-white font-bold">ADD FOOD IN GALLERY</span></button>
        </div>
-       {/* Open the modal using document.getElementById('ID').showModal() method */}
 <dialog id="my_modal_3" className="modal">
   <div className="modal-box">
     <form method="dialog">
-      {/* if there is a button in form, it will close the modal */}
       <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
     </form>
     <input type="submit" value="ADD FOOD" />

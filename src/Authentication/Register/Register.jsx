@@ -15,10 +15,21 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password =form.password.value;
-        // const user = {name, email, photo, password};
+        const user = {name, email, photo};
         // console.log(createUser);
         createUser(email, password)
         .then(result => {
+          fetch('https://flavortrack-server.vercel.app/user', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+           })
+           .then(res=>res.json())
+           .then(data =>{
+            console.log('come', data);
+           })
           updateProfile(result.user, {
             displayName: name,
             photoURL: photo

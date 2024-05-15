@@ -1,11 +1,9 @@
 import { useRef } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import bannerimg1 from '../../assets/food1.jpg'
 import bannerimg2 from '../../assets/food6.jpg'
 import bannerimg3 from '../../assets/food3.jpg'
 import bannerimg4 from '../../assets/food5.jpg'
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';

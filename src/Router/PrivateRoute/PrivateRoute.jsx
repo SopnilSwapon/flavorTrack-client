@@ -1,7 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-// import { useEffect } from "react";
-
+import PropTypes from 'prop-types'
 const PrivateRoute = ({children}) => {
     const {loading, user} = useAuth();
     // const navigate = useNavigate();
@@ -23,3 +22,6 @@ const PrivateRoute = ({children}) => {
 };
 
 export default PrivateRoute;
+PrivateRoute.propTypes = {
+    children: PropTypes.node
+}

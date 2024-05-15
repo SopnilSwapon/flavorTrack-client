@@ -54,8 +54,6 @@ const PurchaseFood = () => {
             })}
         })
         //_______update food___________//
-        // const food = { foodName, foodCategory, quantity, price, description, photo };
-        // console.log(food);
         fetch(`https://flavortrack-server.vercel.app/foods/${_id}`, {
             method: 'PUT',
             headers: {
