@@ -26,7 +26,7 @@ const Navbar = () => {
         <li><NavLink className='badge badge-outline flex justify-center items-center p-5' to='/contact'>Contact Us</NavLink></li>
     </div>
     return (
-        <div className="navbar fixed z-10 bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 rounded text-white">
+        <div className="navbar max-w-7xl mx-auto fixed z-10 bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 rounded text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

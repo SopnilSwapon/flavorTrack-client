@@ -2,20 +2,40 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Food from "./Food";
 import SearchFoods from "./SearchFoods";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import titelBar from '../../assets/allfod6.jpg'
 const AllFoods = () => {
     const [haveNotSeachFood, setHaveNotSeachFood] = useState(true)
     const [searchFood, setSearchFood] = useState(null)
     const [foods, setFoods] = useState([]);
+    const [foodPerPage, setFoodPerPage] = useState(6);
+    const [currentPage, setCurrentPage] = useState(0);
+    const {count} = useLoaderData();
+    const numberOfpages = Math.ceil(count / foodPerPage);
+    const handlePrePage = () =>{
+        if(currentPage > 0){
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const pages = [...Array(numberOfpages).keys()];
+    const handleFoodPerPage = e =>{
+        const value = parseInt(e.target.value);
+        setFoodPerPage(value);
+        setCurrentPage(0)
+    }
+    const handleNextPage = () =>{
+        if(currentPage <pages.length - 1){
+            setCurrentPage(currentPage + 1);
+        }
+    }
     useEffect(()=>{
-        axios.get('https://flavortrack-server.vercel.app/foods')
+        axios.get(`https://flavortrack-server.vercel.app/foods?page=${currentPage}&&size=${foodPerPage}`)
         .then(res => {
             setFoods(res.data);
             setHaveNotSeachFood(true)
         })
-    },[]);
+    },[currentPage, foodPerPage]);
     const handleSearch = e => {
 
         e.preventDefault();
@@ -29,7 +49,6 @@ const AllFoods = () => {
         })
        
     }
-    console.log(searchFood);
     
     return (
         <div className="min-h-[calc(100vh-277px)]">
@@ -73,6 +92,22 @@ const AllFoods = () => {
                }
               </> 
             }
+            </div>
+            <div className="my-4 flex justify-center gap-2">
+                <button onClick={handlePrePage} className="btn btn-sm">pre</button>
+                {
+                    pages.map(page =><button 
+                        onClick={()=>setCurrentPage(page)}
+                        className={`btn btn-sm ${currentPage === page ? 'bg-pink-500 text-white' : ''}`}
+                         key={page}
+                         >{page}</button>)
+                }
+                <select value={foodPerPage} name="" id="" onChange={handleFoodPerPage}>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                    <option value="12">12</option>
+                </select>
+                <button onClick={handleNextPage} className="btn btn-sm">next</button>
             </div>
         </div>
     );
