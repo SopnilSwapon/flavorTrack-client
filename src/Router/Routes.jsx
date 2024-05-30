@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         {
           path: '/allfoods',
           element: <AllFoods></AllFoods>,
-          loader: ()=> fetch('http://localhost:5000/foodsCount')
+          loader: ()=> fetch('https://flavortrack-server.vercel.app/foodsCount')
         },
         {
           path: '/addfooditem',
